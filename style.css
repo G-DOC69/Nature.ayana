@@ -112,13 +112,14 @@ span{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 30px;
-    width: 140px;
-    height: 45px;
+    margin: 25px;
+    width: 145px;
+    height: 60px;
     font-size: 14px;
     color: #2DEA8E;
     font-family: Inter;
     font-weight: 500;
+    box-sizing: content-box;
     border-radius: 12px;
     border: 0.2px solid #FFF;
     background: rgba(255, 255, 255, 0.40);
@@ -135,7 +136,7 @@ span{
 
 
 .result{
-    min-height: 40vh;
+    margin-top: 30px;
 }
 
 .limit_result{
@@ -265,11 +266,13 @@ h5{
 }
 
 .grid1{
-    grid-column: 1 / span 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .grid7 {
-    grid-column: 2 / span 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 
@@ -290,6 +293,16 @@ h5{
     font-weight: 400;
     line-height: 24px; /* 150% */
     margin: 0 auto 3%;
+}
+
+.farming_limit{
+    width: 100%;
+}
+
+.img_half{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video{
@@ -464,10 +477,21 @@ h5{
     box-sizing: border-box;
     box-shadow: 0px 400px 11px 20px rgba(0, 0, 0, 0.1);
 }
+.farming_half{
+    flex-direction: column;
+    display: flex;
+}
 
 @media screen and (max-width: 1024px) {
     h1 {
         font-size: 42px;
+    }
+    .img_half{
+        height: 100vh;
+    }
+    
+    .img_half>img{
+        width: 100%;
     }
 }
 
@@ -511,6 +535,45 @@ h5{
         flex-direction:column;
         gap: 5px;
     }
+    .farming_limit{
+        flex-direction: column;
+    }
+    .img_half>img{
+        width: 85%;
+    }
+    .img_half{
+        flex: 0.8;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+    .farming_half{
+        text-align: center;
+        align-items: center;
+    }
+    .limit_life{
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        height:85vw;
+    }
+    .life{
+        width:85%;
+    }.items{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid7 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .grid4{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
 }
 @media screen and (max-width:550px) {
     .services{
@@ -518,7 +581,11 @@ h5{
         grid-template-rows: repeat(4,1fr);
     }
     .services_item{
-        margin-bottom:25px;
+        margin-bottom:70px;
+    }
+    .btn{
+        width: 140px;
+        height: 45px;
     }
 }
 
